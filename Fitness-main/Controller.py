@@ -6,19 +6,24 @@ from Participant import Participant2
 class Controller: 
     #Konstruktør, her lager vi våres objekter
     def __init__(self):
-        self.participants = [] #create participants
+        #get values we need from csv
         participantsDict = participantDict()
-        self.participants = []
-        for participant in participantsDict:
-            participant = Participant2(
-                name=participant["name"],
-                participant_id=participant["id"],
-                baseline_heart_rate=participant["baseline_heart_rate"],
-                baseline_skin_response=participant["baseline_skin_response"],
-                baseline_temperature=participant["baseline_temperature"]
-            )
-            self.participants.append(participant)
+        #make a dict for later, it will have -> {id, participant}
+        self.participants = {}
 
+        for participantValues in participantsDict:
+            #make participants
+            participant = Participant2(
+                name=participantValues["name"],
+                participant_id=participantValues["id"],
+                baseline_heart_rate=participantValues["baseline_heart_rate"],
+                baseline_skin_response=participantValues["baseline_skin_response"],
+                baseline_temperature=participantValues["baseline_temperature"]
+            )
+            id = participantValues["id"]
+            self.participants[id] = participant
+     
+        #we create the fitness class
         self.fitness = Fitness(self.participants)
         
 

@@ -1,9 +1,9 @@
-from Participant import Participant
+from Participant import Participant2
 from ObservationValidator import ObservationValidator
 from standaloneFunctions import calculate_summary
 
 class DataHandler:
-    def __init__(self, Participant: Participant):
+    def __init__(self, Participant: Participant2):
         self.participant = Participant
         self.observations = self.participant.observations
         self.heart_rate_summary, self.skin_response_summary, self.temperature_summary, self.activity_level_summary, self.signal_quality_summary = self.average(self.observations)

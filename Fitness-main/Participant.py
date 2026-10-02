@@ -27,4 +27,6 @@ class Participant2:
         "Observation containing session ID, timestamp, heart rate, skin response, temperature, activity level, and signal quality."
         self.observations = []
 
+    
+
 

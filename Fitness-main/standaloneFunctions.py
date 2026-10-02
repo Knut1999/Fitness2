@@ -1,13 +1,30 @@
 #Standalone functions
 import csv
+import re
 
-
-def findParticipantData(Fitness, participants, csvFile):
+#regex
+session_pattern = r"^FIT-\d{4}-\d{3}$"
+participant_pattern = r"^P\d{3}$"
+def findParticipantData(fitness, csvFile):
     with open(csvFile, "r") as f:
         data = csv.DictReader(f)
-        for row in data:
-            print(row)
 
+        
+        for row in data:
+            #check for error
+            if not re.fullmatch(session_pattern, row["session_id"]):
+                fitness.badRecords.append(row)
+                continue
+            if not re.fullmatch(participant_pattern, row["participant_id"]):
+                fitness.badRecords.append(row)
+                continue
+            if(row["participant_id"] not in fitness.participants):
+                fitness.badRecords.append(row)
+                continue
+            else:
+                row_id = row["participant_id"]
+                
+                fitness.participants[row_id].observations.append(row)
 
     
 #values er liste med tall og i er 
