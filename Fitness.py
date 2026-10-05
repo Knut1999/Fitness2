@@ -16,6 +16,7 @@ class Fitness:
         self.rows = []
         #this function creates a list with the csv data, it checks for errors with regex
         try:
+            #we do much of the calidation in this csvDataToList function
             self.rows.extend(csvDataToList(self, sessions))
         except FileNotFoundError:
             print("File not found.")
