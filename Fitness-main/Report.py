@@ -2,16 +2,17 @@ from DataHandler import DataHandler
 from SessionClassifyer import SessionClassifyer
 
 from ReportInterface import ReportInterface
-
+accepted_rows = []
+rejected_rows = []
 class GenerateValidReport(ReportInterface):
-    def __init__(self, DataHandler: DataHandler, SessionClassifyer: SessionClassifyer, i):
+    def __init__(self, DataHandler: DataHandler, SessionClassifyer: SessionClassifyer, i, output):
         self.i = i
         self.dataHandler = DataHandler
         self.sessionClassifyer = SessionClassifyer
         self.participant = self.dataHandler.participant
+        self.output = output
         self.writeToReport()
 
-    
     def writeToReport(self):
         
         result = (f"{'=' * 50} \n")
@@ -62,13 +63,17 @@ class GenerateValidReport(ReportInterface):
             else:
                 result += "Activity level did not recover well near the end \n"
 
-        with open("Fitness2/Fitness-main/output/analysis_report.txt", "a", encoding="utf-8") as file:
+        with open(self.output, "a", encoding="utf-8") as file:
             file.write(result)
+
+    def add_accepted_rows(self):
+        accepted_rows.extend(self.dataHandler.observations)
 
 
 class GenerateErrorReport(ReportInterface):
-    def __init__(self, badRecords):
+    def __init__(self, badRecords, output):
         self.badRecords = badRecords
+        self.output = output
         self.writeToReport()
 
     def writeToReport(self):
@@ -86,26 +91,24 @@ class GenerateErrorReport(ReportInterface):
             result += f"The line is: {row}\n"
             result += "\n"
 
-        with open("Fitness2/Fitness-main/output/rejected_records.txt", "a", encoding="utf-8") as file:
+        with open(self.output, "a", encoding="utf-8") as file:
             file.write(result)
+
+    def add_rejected_rows(self):
+        rejected_rows.extend(self.badRecords)
 
 import csv
 class GenerateSummaryReport(ReportInterface):
-    def __init__(self, participant, session, dataHandler, sessionClassifyer):
+    def __init__(self, participant, session, dataHandler, sessionClassifyer, output):
         self.participant = participant
         self.session = session
         self.dataHandler = dataHandler
         self.sessionClassifyer = sessionClassifyer
+        self.output = output
         self.writeToReport()
 
     def writeToReport(self):
-        with open(
-            "Fitness2/Fitness-main/output/analysis_summary.csv",
-            "a",
-            encoding="utf-8",
-            newline=""
-        ) as file:
-
+        with open(self.output, "a", encoding="utf-8", newline="") as file:
             writer = csv.writer(file)
 
             if file.tell() == 0:
@@ -136,3 +139,12 @@ class GenerateSummaryReport(ReportInterface):
                 len(self.dataHandler.observations),
                 self.dataHandler.badRecordsInt
             ])
+
+def finalPrint():
+    print("\nAnalysis completed.")
+    print(f"Accepted rows: {len(accepted_rows)}")
+    print(f"Rejected rows: {len(rejected_rows)}")
+    print("Created report files:")
+    print("- analysis_summary.csv")
+    print("- analysis_report.txt")
+    print("- rejected_records.txt")

@@ -1,4 +1,4 @@
-class InvalidSessionError(Exception):
+class InvalidRowError(Exception):
     pass
 
 class InvalidParticipantError(Exception):

@@ -1,14 +1,16 @@
 from Fitness import Fitness
 from standaloneFunctions import participantDict
 from Participant import Participant
+from pathlib import Path
 
 
 class Controller: 
     #Konstruktør, her lager vi våres objekter
-    def __init__(self):
+    def __init__(self,profiles,sessions,output):
+        self.output = Path(output)
         self.blankReport()
         #get values we need from csv
-        participantsDict = participantDict()
+        participantsDict = participantDict(profiles)
         #make a dict for later, it will have -> {id, participant}
         self.participants = []
 
@@ -24,16 +26,18 @@ class Controller:
             self.participants.append(participant)
      
         #we create the fitness class
-        self.fitness = Fitness(self.participants)
+        self.fitness = Fitness(self.participants, sessions, self.output)
 
     def blankReport(self):
-        with open("Fitness2/Fitness-main/output/analysis_report.txt", "w", encoding="utf-8") as file:
+        self.output.mkdir(parents=True, exist_ok=True)
+
+        with open(self.output / "analysis_report.txt", "w", encoding="utf-8") as file:
             file.write("")
 
-        with open("Fitness2/Fitness-main/output/rejected_records.txt", "w", encoding="utf-8") as file:
+        with open(self.output / "rejected_records.txt", "w", encoding="utf-8") as file:
             file.write("")
 
-        with open("Fitness2/Fitness-main/output/analysis_summary.csv", "w", encoding="utf-8", newline="") as file:
+        with open(self.output / "analysis_summary.csv", "w", encoding="utf-8", newline="") as file:
             file.write("")
 
 if __name__ == "__main__":

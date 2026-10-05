@@ -2,57 +2,33 @@
 FITNESS SESSION ERRORS 
 ==================================================
 
-File: ./Fitness2/Fitness-main/data/fitness_sessions_invalid.csv 
-Row: 3 
-Field: heart_rate 
-The error is: Invalid numeric value 
-The line is: {'session_id': 'FIT-2026-101', 'participant_id': 'P001', 'timestamp': 1, 'heart_rate': 'fast', 'skin_response': '1.55', 'temperature': '32.6', 'activity_level': '0.30', 'signal_quality': '0.94', '_filename': './Fitness2/Fitness-main/data/fitness_sessions_invalid.csv', '_row_number': 3}
-
-File: ./Fitness2/Fitness-main/data/fitness_sessions_invalid.csv 
-Row: 5 
-Field: activity_level 
-The error is: Invalid numeric value 
-The line is: {'session_id': 'FIT-2026-101', 'participant_id': 'P001', 'timestamp': 3, 'heart_rate': 118, 'skin_response': 2.5, 'temperature': 33.2, 'activity_level': '', 'signal_quality': '0.90', '_filename': './Fitness2/Fitness-main/data/fitness_sessions_invalid.csv', '_row_number': 5}
-
-File: ./Fitness2/Fitness-main/data/fitness_sessions_invalid.csv 
-Row: 9 
-Field: timestamp 
-The error is: Invalid numeric value 
-The line is: {'session_id': 'FIT-2026-102', 'participant_id': 'P002', 'timestamp': 'two', 'heart_rate': '110', 'skin_response': '2.20', 'temperature': '33.2', 'activity_level': '0.66', 'signal_quality': '0.93', '_filename': './Fitness2/Fitness-main/data/fitness_sessions_invalid.csv', '_row_number': 9}
-
-File: ./Fitness2/Fitness-main/data/fitness_sessions_invalid.csv 
-Row: 12 
+File: data/fitness_sessions.csv 
+Row: 26 
 Field: signal_quality 
-The error is: Invalid numeric value 
-The line is: {'session_id': 'FIT-2026-103', 'participant_id': 'P003', 'timestamp': 0, 'heart_rate': 70, 'skin_response': 1.2, 'temperature': 32.4, 'activity_level': 0.12, 'signal_quality': None, '_filename': './Fitness2/Fitness-main/data/fitness_sessions_invalid.csv', '_row_number': 12}
+The error is: Poor signal quality 
+The line is: {'session_id': 'FIT-2026-005', 'participant_id': 'P002', 'timestamp': 0, 'heart_rate': 76, 'skin_response': 1.5, 'temperature': 32.7, 'activity_level': 0.12, 'signal_quality': 0.34, '_filename': 'data/fitness_sessions.csv', '_row_number': 26}
 
-File: ./Fitness2/Fitness-main/data/fitness_sessions_invalid.csv 
-Row: 6 
+File: data/fitness_sessions.csv 
+Row: 27 
 Field: signal_quality 
-The error is: Signal quality must be between 0 and 1 
-The line is: {'session_id': 'FIT-2026-101', 'participant_id': 'P001', 'timestamp': 4, 'heart_rate': 124, 'skin_response': 2.8, 'temperature': 33.4, 'activity_level': 0.78, 'signal_quality': 1.4, '_filename': './Fitness2/Fitness-main/data/fitness_sessions_invalid.csv', '_row_number': 6}
+The error is: Poor signal quality 
+The line is: {'session_id': 'FIT-2026-005', 'participant_id': 'P002', 'timestamp': 1, 'heart_rate': 79, 'skin_response': 1.62, 'temperature': 32.8, 'activity_level': 0.18, 'signal_quality': 0.29, '_filename': 'data/fitness_sessions.csv', '_row_number': 27}
 
-File: ./Fitness2/Fitness-main/data/fitness_sessions_invalid.csv 
-Row: 10 
-Field: heart_rate 
-The error is: Too high/low 
-The line is: {'session_id': 'FIT-2026-102', 'participant_id': 'P002', 'timestamp': 3, 'heart_rate': -15, 'skin_response': 2.4, 'temperature': 33.4, 'activity_level': 0.72, 'signal_quality': 0.92, '_filename': './Fitness2/Fitness-main/data/fitness_sessions_invalid.csv', '_row_number': 10}
+File: data/fitness_sessions.csv 
+Row: 28 
+Field: signal_quality 
+The error is: Poor signal quality 
+The line is: {'session_id': 'FIT-2026-005', 'participant_id': 'P002', 'timestamp': 2, 'heart_rate': 95, 'skin_response': 1.9, 'temperature': 33.0, 'activity_level': 0.35, 'signal_quality': 0.25, '_filename': 'data/fitness_sessions.csv', '_row_number': 28}
 
-File: ./Fitness2/Fitness-main/data/fitness_sessions_invalid.csv 
-Row: 11 
-Field: activity_level 
-The error is: Signal quality must be between 0 and 1 
-The line is: {'session_id': 'FIT-2026-102', 'participant_id': 'P002', 'timestamp': 4, 'heart_rate': 126, 'skin_response': -0.5, 'temperature': 55.0, 'activity_level': 1.3, 'signal_quality': 0.91, '_filename': './Fitness2/Fitness-main/data/fitness_sessions_invalid.csv', '_row_number': 11}
+File: data/fitness_sessions.csv 
+Row: 29 
+Field: signal_quality 
+The error is: Poor signal quality 
+The line is: {'session_id': 'FIT-2026-005', 'participant_id': 'P002', 'timestamp': 3, 'heart_rate': 101, 'skin_response': 2.1, 'temperature': 33.1, 'activity_level': 0.42, 'signal_quality': 0.31, '_filename': 'data/fitness_sessions.csv', '_row_number': 29}
 
-File: ./Fitness2/Fitness-main/data/fitness_sessions_invalid.csv 
-Row: 4 
-Field: participant_id 
-The error is: Unknown participant ID 
-The line is: {'session_id': 'FIT-2026-101', 'participant_id': '001', 'timestamp': 2, 'heart_rate': 105, 'skin_response': 2.1, 'temperature': 33.0, 'activity_level': 0.6, 'signal_quality': 0.92, '_filename': './Fitness2/Fitness-main/data/fitness_sessions_invalid.csv', '_row_number': 4}
-
-File: ./Fitness2/Fitness-main/data/fitness_sessions_invalid.csv 
-Row: 8 
-Field: participant_id 
-The error is: Unknown participant ID 
-The line is: {'session_id': 'FIT-2026-102', 'participant_id': 'P999', 'timestamp': 1, 'heart_rate': 96, 'skin_response': 1.9, 'temperature': 33.0, 'activity_level': 0.48, 'signal_quality': 0.94, '_filename': './Fitness2/Fitness-main/data/fitness_sessions_invalid.csv', '_row_number': 8}
+File: data/fitness_sessions.csv 
+Row: 30 
+Field: signal_quality 
+The error is: Poor signal quality 
+The line is: {'session_id': 'FIT-2026-005', 'participant_id': 'P002', 'timestamp': 4, 'heart_rate': 88, 'skin_response': 1.75, 'temperature': 32.9, 'activity_level': 0.25, 'signal_quality': 0.28, '_filename': 'data/fitness_sessions.csv', '_row_number': 30}
 

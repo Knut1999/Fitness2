@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from DataHandler import DataHandler
 from Participant import Participant
 from ReportInterface import ReportInterface
@@ -7,14 +9,14 @@ from standaloneFunctions import csvDataToList, assign_rows_to_participants, rowV
 
 
 class Fitness:
-    def __init__(self, participants: list[Participant]):
+    def __init__(self, participants: list[Participant], sessions, output):
+        self.output = Path(output)
         self.participants = participants
         self.badRecords = []
         self.rows = []
         #this function creates a list with the csv data, it checks for errors with regex
         try:
-            self.rows.extend(csvDataToList(self, "./Fitness2/Fitness-main/data/fitness_sessions.csv"))
-            self.rows.extend(csvDataToList(self, "./Fitness2/Fitness-main/data/fitness_sessions_invalid.csv"))
+            self.rows.extend(csvDataToList(self, sessions))
         except FileNotFoundError:
             print("File not found.")
         #now lets remove error rows
@@ -34,11 +36,14 @@ class Fitness:
             for session in participant.sessions:
                 if(len(session.observations) == 0): continue
                 dataHandler = DataHandler(participant, session, self.badRecords)
-                sessionClassifyer = SessionClassifyer(dataHandler) 
                 # Generate report
                 i += 1
                 sessionClassifyer = SessionClassifyer(dataHandler)
-                generateValidReport: ReportInterface = GenerateValidReport(dataHandler, sessionClassifyer, i)
-                generateSummaryReport: GenerateSummaryReport = GenerateSummaryReport(participant,session,dataHandler,sessionClassifyer)
+                generateValidReport: ReportInterface = GenerateValidReport(dataHandler, sessionClassifyer, i, self.output / "analysis_report.txt")
+                generateValidReport.add_accepted_rows()
+                generateSummaryReport: GenerateSummaryReport = GenerateSummaryReport(participant,session,dataHandler,sessionClassifyer, self.output / "analysis_summary.csv")
         #create the report with the errors
-        generateErrorReport: ReportInterface = GenerateErrorReport(self.badRecords)
+        generateErrorReport: ReportInterface = GenerateErrorReport(self.badRecords, self.output / "rejected_records.txt")
+        generateErrorReport.add_rejected_rows()
+        import Report
+        Report.finalPrint()
