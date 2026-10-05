@@ -18,11 +18,17 @@ def csvDataToList(fitness, csvFile):
             row["_filename"] = csvFile
             row["_row_number"] = row_number
             #regex
-            if not re.fullmatch(session_pattern, row["session_id"]):
-                fitness.badRecords.append([row, "session_id", "Invalid identifier(regex)"])
-                continue
-            if not re.fullmatch(participant_pattern, row["participant_id"]):
-                fitness.badRecords.append([row, "participant_id", "Invalid identifier(regex)"])
+            try:
+                if not re.fullmatch(session_pattern, row["session_id"]):
+                    fitness.badRecords.append([row, "session_id", "Invalid identifier(regex)"])
+                    continue
+
+                if not re.fullmatch(participant_pattern, row["participant_id"]):
+                    fitness.badRecords.append([row, "participant_id", "Invalid identifier(regex)"])
+                    continue
+
+            except KeyError as e:
+                fitness.badRecords.append([row, str(e), "Missing required field"])
                 continue
             if len(row) != 10:
                 fitness.badRecords.append(
