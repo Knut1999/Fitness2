@@ -7,114 +7,24 @@ Reference ID: P001
 Baseline heart rate: 68.0 bpm
 Baseline skin response: 1.2
 Baseline temperature: 32.4°C
-Number of measurements: 6
-Usable measurements: 6
-Invalid measurements: 0
-Session classification: Recovering
-Reason: Heart rate and activity level decreased toward the end of the session.
+Number of measurements: 5
+Usable measurements: 1
+Invalid measurements: 4
+Session classification: Invalid
+Reason: The session contains invalid readings.
 
 Heart rate summary      |Skin response summary   |Temperature summary     |Activity level summary  |Signal quality summary
-Average: 68.83          |Average: 1.19           |Average: 32.43          |Average: 0.09           |Average: 0.97
-Maximum: 70             |Maximum: 1.22           |Maximum: 32.5           |Maximum: 0.12           |Maximum: 0.98
-Minimum: 68             |Minimum: 1.17           |Minimum: 32.4           |Minimum: 0.07           |Minimum: 0.96
+Average: 72.0           |Average: 1.3            |Average: 32.5           |Average: 0.1            |Average: 0.96
+Maximum: 72             |Maximum: 1.3            |Maximum: 32.5           |Maximum: 0.1            |Maximum: 0.96
+Minimum: 72             |Minimum: 1.3            |Minimum: 32.5           |Minimum: 0.1            |Minimum: 0.96
 Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0
 
 ==================================================
 RECOVERY 
 ================================================== 
-Heart rate average in the first half: 69.0 
-Heart rate average in the last half: 68.67 
-Heart rate did recover well near the end 
+Heart rate average in the first half: 72.0 
+Heart rate average in the last half: 72.0 
+Heart rate did not recover well near the end 
 Activity level average in the first half: 0.1 
-Activity level average in the last half: 0.09 
-Activity level did recover well near the end 
-================================================== 
-FITNESS SESSION REPORT 2
-==================================================
-
-Name: Amina Noor 
-Reference ID: P001
-Baseline heart rate: 68.0 bpm
-Baseline skin response: 1.2
-Baseline temperature: 32.4°C
-Number of measurements: 6
-Usable measurements: 6
-Invalid measurements: 0
-Session classification: Recovering
-Reason: Heart rate and activity level decreased toward the end of the session.
-
-Heart rate summary      |Skin response summary   |Temperature summary     |Activity level summary  |Signal quality summary
-Average: 113.17         |Average: 2.58           |Average: 33.28          |Average: 0.55           |Average: 0.96
-Maximum: 151            |Maximum: 3.9            |Maximum: 33.9           |Maximum: 0.92           |Maximum: 0.97
-Minimum: 72             |Minimum: 1.35           |Minimum: 32.6           |Minimum: 0.18           |Minimum: 0.94
-Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0
-
-==================================================
-RECOVERY 
-================================================== 
-Heart rate average in the first half: 120.33 
-Heart rate average in the last half: 106.0 
-Heart rate did recover well near the end 
-Activity level average in the first half: 0.66 
-Activity level average in the last half: 0.43 
-Activity level did recover well near the end 
-================================================== 
-FITNESS SESSION REPORT 3
-==================================================
-
-Name: Jonas Berg 
-Reference ID: P002
-Baseline heart rate: 74.0 bpm
-Baseline skin response: 1.45
-Baseline temperature: 32.7°C
-Number of measurements: 6
-Usable measurements: 6
-Invalid measurements: 0
-Session classification: Moderate activity
-Reason: Activity level was moderate and heart rate was above baseline.
-
-Heart rate summary      |Skin response summary   |Temperature summary     |Activity level summary  |Signal quality summary
-Average: 102.0          |Average: 2.01           |Average: 33.13          |Average: 0.5            |Average: 0.94
-Maximum: 118            |Maximum: 2.4            |Maximum: 33.4           |Maximum: 0.68           |Maximum: 0.96
-Minimum: 78             |Minimum: 1.55           |Minimum: 32.8           |Minimum: 0.22           |Minimum: 0.93
-Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0
-
-==================================================
-RECOVERY 
-================================================== 
-Heart rate average in the first half: 95.33 
-Heart rate average in the last half: 108.67 
-Heart rate did not recover well near the end 
-Activity level average in the first half: 0.43 
-Activity level average in the last half: 0.56 
-Activity level did not recover well near the end 
-================================================== 
-FITNESS SESSION REPORT 4
-==================================================
-
-Name: Maya Chen 
-Reference ID: P003
-Baseline heart rate: 63.0 bpm
-Baseline skin response: 1.1
-Baseline temperature: 32.3°C
-Number of measurements: 6
-Usable measurements: 6
-Invalid measurements: 0
-Session classification: High activity
-Reason: Activity level was high and heart rate was substantially above baseline.
-
-Heart rate summary      |Skin response summary   |Temperature summary     |Activity level summary  |Signal quality summary
-Average: 132.5          |Average: 3.24           |Average: 33.53          |Average: 0.75           |Average: 0.94
-Maximum: 162            |Maximum: 4.2            |Maximum: 34.1           |Maximum: 0.94           |Maximum: 0.97
-Minimum: 72             |Minimum: 1.3            |Minimum: 32.5           |Minimum: 0.25           |Minimum: 0.92
-Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0 |Invalid measurements: 0
-
-==================================================
-RECOVERY 
-================================================== 
-Heart rate average in the first half: 110.67 
-Heart rate average in the last half: 154.33 
-Heart rate did not recover well near the end 
-Activity level average in the first half: 0.6 
-Activity level average in the last half: 0.9 
+Activity level average in the last half: 0.1 
 Activity level did not recover well near the end 

@@ -18,6 +18,6 @@ class ObservationValidator:
             flags["skin_response"] = "Skin response out of range"
         if float(observation["temperature"]) < 20 or float(observation["temperature"]) > 60:
             flags["temperature"] = "Temperature out of range"
-        if float(observation["signal_quality"]) < 0.5:
+        if float(observation["signal_quality"]) < 0 or float(observation["signal_quality"]) > 1:
             flags["signal_quality"] = "Poor signal quality"
         return flags
