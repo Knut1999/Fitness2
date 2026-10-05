@@ -17,7 +17,7 @@ def csvDataToList(fitness, csvFile):
         for row_number, row in enumerate(data, start=2):
             row["_filename"] = csvFile
             row["_row_number"] = row_number
-            #regex
+            #regex and key error handling
             try:
                 if not re.fullmatch(session_pattern, row["session_id"]):
                     fitness.badRecords.append([row, "session_id", "Invalid identifier(regex)"])
